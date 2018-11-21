@@ -1,0 +1,73 @@
+{% load static %}
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    form{
+        {#background-color: cornflowerblue;#}
+        border:5px red dashed;
+        padding:10px;
+        margin-top: -10px;
+        border-radius: 10px;
+    }
+    body{
+        background-size: cover;
+    }
+    .container{
+        margin-top: 10px;
+
+    }
+    .sub1{
+        color:black;
+        border:none;
+    }
+    .sub1:hover{
+        background-color: green;
+        color:white;
+        border:2px red solid;
+    }
+    .set1{
+        background-color: darkblue;
+        color: white;
+    }
+    .set1:hover{
+        background-color: lightgreen;
+        color: cyan;
+        border:2px red solid;
+    }
+    h1{
+        font-size: 20px;
+        font-family: fantasy;
+        color:brown;
+        text-align: center;
+    }
+</style>
+<body background="{% static 'images/image1.jpg' %}">
+<h1>Please Enter Your Details Here...</h1>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-offset-1 col-md-4">
+            <form method="POST" action=".\thanku">
+                {% csrf_token %}
+            {{ form }}<br><br>
+                 <center> <button class="btn btn-primary">Submit</button>
+               <input class="btn btn-danger" type="reset" value="Reset"></center>
+
+            </form>
+{#           <center> <button class="btn btn-primary">Submit</button>#}
+{#               <input class="btn btn-danger" type="reset" value="Reset"></center>#}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
